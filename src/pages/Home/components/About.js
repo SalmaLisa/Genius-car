@@ -20,7 +20,7 @@ const About = () => {
       <h1 className="text-5xl font-bold leading-tight">We are qualified <br /> & of experience <br /> in this field</h1>
       <p className="py-6">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
       <p className="pb-12">the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
-      <Link style={{backgroundColor:'#ff3811'}} className='text-white font-semibold py-4 px-8 rounded'>Grt More Info
+      <Link style={{backgroundColor:'#ff3811'}} className='text-white font-semibold py-4 px-8 rounded'>Get More Info
     </Link>
     </div>
   </div>

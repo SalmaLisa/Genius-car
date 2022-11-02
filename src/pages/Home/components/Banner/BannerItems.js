@@ -20,9 +20,9 @@ const BannerItems = ({ info }) => {
       <p className='text-white pt-32' >There are many variations of passages of  available, but <br /> the majority have suffered alteration in some form</p>
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-24 top-3/4 ">
-      <Link style={{backgroundColor:'#ff3811'}} className='text-white font-semibold py-2 px-6 rounded'>Discover More
+      <Link style={{backgroundColor:'#ff3811'}} className='text-xl text-white font-semibold py-3 px-8 rounded'>Discover More
     </Link>
-      <Link className='border text-white font-semibold py-2 px-6 rounded ml-5'>Latest Project
+      <Link className='text-xl border text-white font-semibold py-3 px-6 rounded ml-5'>Latest Project
     </Link>
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-5 right-5 bottom-0">

@@ -8,6 +8,7 @@ const Header = () => {
   const menuItems = <>
   <li><Link className='font-semibold'>Home</Link></li>
         <li><Link className='font-semibold'>About</Link></li>
+        <li><Link className='font-semibold'>Services</Link></li>
   </>
   return (
     <div className="navbar  py-5">
