@@ -1,14 +1,35 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.svg'
 import { BsHandbag ,BsSearch } from 'react-icons/bs';
+import { AuthContext } from '../../Contexts/AuthProvider';
 
 
 const Header = () => {
+  const { user, logout } = useContext(AuthContext)
+  const navigate = useNavigate();
+  //log out function
+  const handleLogOut = () => {
+    logout()
+      .then(() => {
+        navigate('/')
+       })
+    .catch(err=>console.error(err))
+  }
+
   const menuItems = <>
-  <li><Link className='font-semibold'>Home</Link></li>
+  <li><Link to='/' className='font-semibold'>Home</Link></li>
         <li><Link className='font-semibold'>About</Link></li>
-        <li><Link className='font-semibold'>Services</Link></li>
+    <li><Link className='font-semibold'>Services</Link></li>
+    {
+      user?.uid ?
+        <>
+          <li onClick={handleLogOut}><Link className='font-semibold'>Logout</Link></li>
+          <li><Link to='/services/checkout' className='font-semibold'>Check Out</Link></li>
+        </>
+        :
+        <li><Link to='/login' className='font-semibold'>Login</Link></li>
+    }
   </>
   return (
     <div className="navbar  py-5">

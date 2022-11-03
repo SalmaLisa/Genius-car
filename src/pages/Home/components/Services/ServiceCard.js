@@ -43,7 +43,7 @@ const ServiceCard = () => {
                   <p className="text-xl text-orange-600 font-semibold">
                     Price : ${service.price}
                   </p>
-                  <Link to={`/services/${service._id}`} className="text-orange-600 text-2xl">
+                  <Link to={`/services/checkout/${service._id}`} className="text-orange-600 text-2xl">
                     <HiOutlineArrowRight />
                   </Link>
                 </div>
