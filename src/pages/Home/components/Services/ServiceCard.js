@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { HiOutlineArrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
-const Services = () => {
+const ServiceCard = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("Services.json")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setServices(data))
       .catch((err) => console.error(err));
@@ -43,7 +43,7 @@ const Services = () => {
                   <p className="text-xl text-orange-600 font-semibold">
                     Price : ${service.price}
                   </p>
-                  <Link className="text-orange-600 text-2xl">
+                  <Link to={`/services/${service._id}`} className="text-orange-600 text-2xl">
                     <HiOutlineArrowRight />
                   </Link>
                 </div>
@@ -62,4 +62,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServiceCard;
