@@ -24,8 +24,8 @@ const Header = () => {
     {
       user?.uid ?
         <>
+          <li><Link to='/cartDetails' className='font-semibold'>Cart Details</Link></li>
           <li onClick={handleLogOut}><Link className='font-semibold'>Logout</Link></li>
-          <li><Link to='/services/checkout' className='font-semibold'>Check Out</Link></li>
         </>
         :
         <li><Link to='/login' className='font-semibold'>Login</Link></li>

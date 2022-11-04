@@ -1,6 +1,7 @@
 
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
+import CartDetails from "../pages/CartDetails/CartDetails";
 import CheckOut from "../pages/CheckOut/CheckOut";
 import ServiceDetails from "../pages/Home/components/Services/ServiceDetails";
 import Home from "../pages/Home/HomePage/Home";
@@ -16,27 +17,31 @@ export const router = createBrowserRouter([
     element: <Main></Main>,
     children: [
       {
-      path: '/',
-      element:<Home></Home>
+        path: '/',
+        element: <Home></Home>
       },
       {
-      path: '/login',
-      element:<Login></Login>
+        path: '/login',
+        element: <Login></Login>
       },
       {
-      path: '/signup',
-      element:<SignUp></SignUp>
+        path: '/signup',
+        element: <SignUp></SignUp>
       },
       {
-      path: '/services/checkout/:id',
+        path: '/services/checkout/:id',
         element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
       },
       {
-      path: '/services/:id',
+        path: '/services/:id',
         element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-      loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
       },
+      {
+        path: '/cartDetails',
+        element: <PrivateRoute><CartDetails></CartDetails></PrivateRoute>,
+      }
     ]
   }
 ])

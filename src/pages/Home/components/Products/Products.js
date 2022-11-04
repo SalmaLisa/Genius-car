@@ -4,7 +4,6 @@ import { AiFillStar } from 'react-icons/ai';
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  console.log(products)
   useEffect(() => {
     fetch('products.json')
       .then(res => res.json())
